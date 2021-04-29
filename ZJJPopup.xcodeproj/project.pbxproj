@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFB4821526396D380062AB31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4821426396D380062AB31 /* AppDelegate.swift */; };
+		FFB4821726396D380062AB31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4821626396D380062AB31 /* SceneDelegate.swift */; };
+		FFB4821926396D380062AB31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4821826396D380062AB31 /* ViewController.swift */; };
+		FFB4821C26396D380062AB31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB4821A26396D380062AB31 /* Main.storyboard */; };
+		FFB4821E26396D390062AB31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB4821D26396D390062AB31 /* Assets.xcassets */; };
+		FFB4822126396D390062AB31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB4821F26396D390062AB31 /* LaunchScreen.storyboard */; };
+		FFB4823226396D520062AB31 /* ZJJDefaultSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4822A26396D520062AB31 /* ZJJDefaultSelectTableView.swift */; };
+		FFB4823326396D520062AB31 /* ZJJOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4822B26396D520062AB31 /* ZJJOption.swift */; };
+		FFB4823426396D520062AB31 /* ZJJDefaultPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4822C26396D520062AB31 /* ZJJDefaultPickerView.swift */; };
+		FFB4823526396D520062AB31 /* ZJJOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4822D26396D520062AB31 /* ZJJOptionProtocol.swift */; };
+		FFB4823626396D520062AB31 /* ZJJPopupTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4822E26396D520062AB31 /* ZJJPopupTopView.swift */; };
+		FFB4823726396D520062AB31 /* ZJJPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4822F26396D520062AB31 /* ZJJPopupView.swift */; };
+		FFB4823826396D520062AB31 /* ZJJPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4823026396D520062AB31 /* ZJJPopup.swift */; };
+		FFB4823926396D520062AB31 /* ZJJPopupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4823126396D520062AB31 /* ZJJPopupModel.swift */; };
+		FFB4823D263970630062AB31 /* ZJJConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4823C263970630062AB31 /* ZJJConfigModel.swift */; };
+		FFB48241263A52B90062AB31 /* ZJJDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB48240263A52B90062AB31 /* ZJJDataModel.swift */; };
+		FFB48245263A7EF70062AB31 /* ZJJCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB48243263A7EF70062AB31 /* ZJJCustomCell.swift */; };
+		FFB48246263A7EF70062AB31 /* ZJJCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB48244263A7EF70062AB31 /* ZJJCustomCell.xib */; };
+		FFB48249263A85540062AB31 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB48248263A85540062AB31 /* UIViewExtension.swift */; };
+		FFB4824E263A9E9A0062AB31 /* ZJJCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4824D263A9E9A0062AB31 /* ZJJCustomView.swift */; };
+		FFB48251263A9EAC0062AB31 /* ZJJCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB48250263A9EAC0062AB31 /* ZJJCustomView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FFB4821126396D380062AB31 /* ZJJPopup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJJPopup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB4821426396D380062AB31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FFB4821626396D380062AB31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FFB4821826396D380062AB31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFB4821B26396D380062AB31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFB4821D26396D390062AB31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFB4822026396D390062AB31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FFB4822226396D390062AB31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFB4822A26396D520062AB31 /* ZJJDefaultSelectTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJDefaultSelectTableView.swift; sourceTree = "<group>"; };
+		FFB4822B26396D520062AB31 /* ZJJOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJOption.swift; sourceTree = "<group>"; };
+		FFB4822C26396D520062AB31 /* ZJJDefaultPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJDefaultPickerView.swift; sourceTree = "<group>"; };
+		FFB4822D26396D520062AB31 /* ZJJOptionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJOptionProtocol.swift; sourceTree = "<group>"; };
+		FFB4822E26396D520062AB31 /* ZJJPopupTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJPopupTopView.swift; sourceTree = "<group>"; };
+		FFB4822F26396D520062AB31 /* ZJJPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJPopupView.swift; sourceTree = "<group>"; };
+		FFB4823026396D520062AB31 /* ZJJPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJPopup.swift; sourceTree = "<group>"; };
+		FFB4823126396D520062AB31 /* ZJJPopupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJPopupModel.swift; sourceTree = "<group>"; };
+		FFB4823C263970630062AB31 /* ZJJConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJConfigModel.swift; sourceTree = "<group>"; };
+		FFB48240263A52B90062AB31 /* ZJJDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJDataModel.swift; sourceTree = "<group>"; };
+		FFB48243263A7EF70062AB31 /* ZJJCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJCustomCell.swift; sourceTree = "<group>"; };
+		FFB48244263A7EF70062AB31 /* ZJJCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZJJCustomCell.xib; sourceTree = "<group>"; };
+		FFB48248263A85540062AB31 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		FFB4824D263A9E9A0062AB31 /* ZJJCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJCustomView.swift; sourceTree = "<group>"; };
+		FFB48250263A9EAC0062AB31 /* ZJJCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZJJCustomView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFB4820E26396D380062AB31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFB4820826396D380062AB31 = {
+			isa = PBXGroup;
+			children = (
+				FFB4821326396D380062AB31 /* ZJJPopup */,
+				FFB4821226396D380062AB31 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFB4821226396D380062AB31 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFB4821126396D380062AB31 /* ZJJPopup.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFB4821326396D380062AB31 /* ZJJPopup */ = {
+			isa = PBXGroup;
+			children = (
+				FFB48253263ABB970062AB31 /* Example */,
+				FFB4822926396D520062AB31 /* ZJJPopup */,
+				FFB4821426396D380062AB31 /* AppDelegate.swift */,
+				FFB4821626396D380062AB31 /* SceneDelegate.swift */,
+				FFB4821A26396D380062AB31 /* Main.storyboard */,
+				FFB4821D26396D390062AB31 /* Assets.xcassets */,
+				FFB4821F26396D390062AB31 /* LaunchScreen.storyboard */,
+				FFB4822226396D390062AB31 /* Info.plist */,
+			);
+			path = ZJJPopup;
+			sourceTree = "<group>";
+		};
+		FFB4822926396D520062AB31 /* ZJJPopup */ = {
+			isa = PBXGroup;
+			children = (
+				FFB4822A26396D520062AB31 /* ZJJDefaultSelectTableView.swift */,
+				FFB4822B26396D520062AB31 /* ZJJOption.swift */,
+				FFB4822C26396D520062AB31 /* ZJJDefaultPickerView.swift */,
+				FFB4822D26396D520062AB31 /* ZJJOptionProtocol.swift */,
+				FFB4822E26396D520062AB31 /* ZJJPopupTopView.swift */,
+				FFB4822F26396D520062AB31 /* ZJJPopupView.swift */,
+				FFB4823026396D520062AB31 /* ZJJPopup.swift */,
+				FFB4823126396D520062AB31 /* ZJJPopupModel.swift */,
+				FFB48248263A85540062AB31 /* UIViewExtension.swift */,
+			);
+			path = ZJJPopup;
+			sourceTree = "<group>";
+		};
+		FFB48253263ABB970062AB31 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				FFB4821826396D380062AB31 /* ViewController.swift */,
+				FFB4823C263970630062AB31 /* ZJJConfigModel.swift */,
+				FFB48240263A52B90062AB31 /* ZJJDataModel.swift */,
+				FFB48243263A7EF70062AB31 /* ZJJCustomCell.swift */,
+				FFB48244263A7EF70062AB31 /* ZJJCustomCell.xib */,
+				FFB4824D263A9E9A0062AB31 /* ZJJCustomView.swift */,
+				FFB48250263A9EAC0062AB31 /* ZJJCustomView.xib */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFB4821026396D380062AB31 /* ZJJPopup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFB4822526396D390062AB31 /* Build configuration list for PBXNativeTarget "ZJJPopup" */;
+			buildPhases = (
+				FFB4820D26396D380062AB31 /* Sources */,
+				FFB4820E26396D380062AB31 /* Frameworks */,
+				FFB4820F26396D380062AB31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZJJPopup;
+			productName = ZJJPopup;
+			productReference = FFB4821126396D380062AB31 /* ZJJPopup.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFB4820926396D380062AB31 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					FFB4821026396D380062AB31 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = FFB4820C26396D380062AB31 /* Build configuration list for PBXProject "ZJJPopup" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFB4820826396D380062AB31;
+			productRefGroup = FFB4821226396D380062AB31 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFB4821026396D380062AB31 /* ZJJPopup */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFB4820F26396D380062AB31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFB48251263A9EAC0062AB31 /* ZJJCustomView.xib in Resources */,
+				FFB4822126396D390062AB31 /* LaunchScreen.storyboard in Resources */,
+				FFB4821E26396D390062AB31 /* Assets.xcassets in Resources */,
+				FFB4821C26396D380062AB31 /* Main.storyboard in Resources */,
+				FFB48246263A7EF70062AB31 /* ZJJCustomCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFB4820D26396D380062AB31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFB48249263A85540062AB31 /* UIViewExtension.swift in Sources */,
+				FFB4823626396D520062AB31 /* ZJJPopupTopView.swift in Sources */,
+				FFB4824E263A9E9A0062AB31 /* ZJJCustomView.swift in Sources */,
+				FFB4823826396D520062AB31 /* ZJJPopup.swift in Sources */,
+				FFB4823926396D520062AB31 /* ZJJPopupModel.swift in Sources */,
+				FFB48241263A52B90062AB31 /* ZJJDataModel.swift in Sources */,
+				FFB4823726396D520062AB31 /* ZJJPopupView.swift in Sources */,
+				FFB4823D263970630062AB31 /* ZJJConfigModel.swift in Sources */,
+				FFB4823226396D520062AB31 /* ZJJDefaultSelectTableView.swift in Sources */,
+				FFB4823426396D520062AB31 /* ZJJDefaultPickerView.swift in Sources */,
+				FFB4821926396D380062AB31 /* ViewController.swift in Sources */,
+				FFB4823526396D520062AB31 /* ZJJOptionProtocol.swift in Sources */,
+				FFB4823326396D520062AB31 /* ZJJOption.swift in Sources */,
+				FFB4821526396D380062AB31 /* AppDelegate.swift in Sources */,
+				FFB4821726396D380062AB31 /* SceneDelegate.swift in Sources */,
+				FFB48245263A7EF70062AB31 /* ZJJCustomCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FFB4821A26396D380062AB31 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFB4821B26396D380062AB31 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FFB4821F26396D390062AB31 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFB4822026396D390062AB31 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFB4822326396D390062AB31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFB4822426396D390062AB31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFB4822626396D390062AB31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GG26W7FHYS;
+				INFOPLIST_FILE = ZJJPopup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bw.ZJJPopup;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFB4822726396D390062AB31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GG26W7FHYS;
+				INFOPLIST_FILE = ZJJPopup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bw.ZJJPopup;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFB4820C26396D380062AB31 /* Build configuration list for PBXProject "ZJJPopup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB4822326396D390062AB31 /* Debug */,
+				FFB4822426396D390062AB31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFB4822526396D390062AB31 /* Build configuration list for PBXNativeTarget "ZJJPopup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFB4822626396D390062AB31 /* Debug */,
+				FFB4822726396D390062AB31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFB4820926396D380062AB31 /* Project object */;
+}
