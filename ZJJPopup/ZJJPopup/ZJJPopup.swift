@@ -54,7 +54,7 @@ class ZJJPopup {
         var popupModel = ZJJPopupModel()
         popupModel.isTouchHidden = isTouchHidden
         popupModel.popupViewStyle = style
-        popupModel.isHiddenTopView = true
+        popupModel.topViewConfig.isHidden = true
         let popupView = ZJJPopupView.init(contentView: contentView, popupModel: popupModel)
         popupView.show()
         return popupView

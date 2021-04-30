@@ -13,13 +13,13 @@ class ZJJPopupTopView: UIView {
     private let lineView:UIView = UIView()
     let cancelButton = UIButton()
     let confirmButton = UIButton()
-    private var popupModel:ZJJPopupModel = ZJJPopupModel()
+    private var config:ZJJPopupTopViewConfig =  ZJJPopupTopViewConfig()
     
-    func setup(frame:CGRect,popupModel:ZJJPopupModel) {
+    func setup(frame:CGRect,config:ZJJPopupTopViewConfig) {
         self.frame = frame
         
         confirmButton.contentEdgeInsets = .init(top: 0, left: 15, bottom: 0, right: 15)
-        self.popupModel = popupModel
+        self.config = config
         self.setupUI()
     }
     
@@ -32,30 +32,32 @@ class ZJJPopupTopView: UIView {
         if self.backgroundColor == nil {
             self.backgroundColor = .white
         }
-        if !popupModel.cancelConfig.isHidden {
+        if !config.cancelConfig.isHidden {
             self.addSubview(self.cancelButton)
-            cancelButton.contentEdgeInsets = .init(top: 0, left: popupModel.cancelConfig.leftRightMargin, bottom: 0, right: popupModel.cancelConfig.leftRightMargin)
-            self.setup(view: cancelButton, config: popupModel.cancelConfig)
-            cancelSize = self.getBtnSize(config: popupModel.cancelConfig)
+            cancelButton.contentEdgeInsets = .init(top: 0, left: config.cancelConfig.leftRightMargin, bottom: 0, right: config.cancelConfig.leftRightMargin)
+            self.setup(view: cancelButton, config: config.cancelConfig)
+            cancelSize = self.getBtnSize(config: config.cancelConfig)
         }
         
-        if !popupModel.confirmConfig.isHidden {
+        if !config.confirmConfig.isHidden {
             self.addSubview(self.confirmButton)
-            confirmButton.contentEdgeInsets = .init(top: 0, left: popupModel.confirmConfig.leftRightMargin, bottom: 0, right: popupModel.confirmConfig.leftRightMargin)
-            self.setup(view: confirmButton, config: popupModel.confirmConfig)
-            confirmSize = self.getBtnSize(config: popupModel.confirmConfig)
+            confirmButton.contentEdgeInsets = .init(top: 0, left: config.confirmConfig.leftRightMargin, bottom: 0, right: config.confirmConfig.leftRightMargin)
+            self.setup(view: confirmButton, config: config.confirmConfig)
+            confirmSize = self.getBtnSize(config: config.confirmConfig)
         }
         
-        if !popupModel.titleConfig.isHidden {
+        if !config.titleConfig.isHidden {
+           
             self.addSubview(self.titleLabel)
-            self.setup(view: titleLabel, config: popupModel.titleConfig)
-            titleWidth = self.frame.size.width -  (max(cancelSize.width, confirmSize.width)*2 + popupModel.cancelConfig.margin+popupModel.confirmConfig.margin) - popupModel.titleConfig.leftRightMargin*2
+            self.setup(view: titleLabel, config: config.titleConfig)
+            titleWidth = self.getTitleWidth(cancelSize: cancelSize, confirmSize: confirmSize)
+            
             if titleWidth > 0 {
-                let height = self.getHeight(width: titleWidth, config: popupModel.titleConfig)
-                if popupModel.titleConfig.numberOfLines == 0 {
+                let height = self.getHeight(width: titleWidth, config: config.titleConfig)
+                if config.titleConfig.numberOfLines == 0 {
                     titleHeight = height
-                }else if popupModel.titleConfig.numberOfLines > 1{
-                    let heightN = CGFloat(22*popupModel.titleConfig.numberOfLines)+10
+                }else if config.titleConfig.numberOfLines > 1{
+                    let heightN = CGFloat(22*config.titleConfig.numberOfLines)+10
                     if height > heightN {
                         titleHeight = heightN
                     }else{
@@ -71,24 +73,63 @@ class ZJJPopupTopView: UIView {
         
         
         //取最大值作为topView的高度
-        let viewHeight = max(cancelSize.height+popupModel.cancelConfig.minTopBottom*2, confirmSize.height+popupModel.confirmConfig.minTopBottom*2, titleHeight, popupModel.topViewMinHeight)
+        let viewHeight = max(cancelSize.height+config.cancelConfig.minTopBottom*2, confirmSize.height+config.confirmConfig.minTopBottom*2, titleHeight, config.minHeight)
         
         var selfFrame = self.frame
         selfFrame.size.height = viewHeight
         self.frame = selfFrame
-        self.titleLabel.frame = CGRect.init(x: 0, y: 0, width: titleWidth, height: titleHeight)
-        self.titleLabel.center = CGPoint.init(x: self.frame.size.width/2.0, y: viewHeight/2.0)
         
-        self.cancelButton.frame = CGRect.init(origin: CGPoint.init(x: popupModel.cancelConfig.margin, y: 0), size: cancelSize)
+        self.cancelButton.frame = CGRect.init(origin: CGPoint.init(x: config.cancelConfig.margin, y: 0), size: cancelSize)
         self.cancelButton.center = CGPoint.init(x:self.cancelButton.center.x , y: viewHeight/2.0)
-        self.confirmButton.frame  = CGRect.init(origin: CGPoint.init(x: self.frame.size.width - popupModel.confirmConfig.margin-confirmSize.width, y: 0), size: confirmSize)
+        self.confirmButton.frame  = CGRect.init(origin: CGPoint.init(x: self.frame.size.width - config.confirmConfig.margin-confirmSize.width, y: 0), size: confirmSize)
         self.confirmButton.center = CGPoint.init(x:self.confirmButton.center.x , y: viewHeight/2.0)
-        if !popupModel.isHiddenLine {
+        
+        self.setupTitleFrame(width: titleWidth, height: titleHeight, viewHeight: viewHeight)
+        
+        if !config.separatorConfig.isHidden {
             self.addSubview(self.lineView)
-            self.lineView.backgroundColor = popupModel.lineColor
-            self.lineView.frame = CGRect.init(x: 0, y: viewHeight-popupModel.lineHeight, width: self.frame.size.width, height:popupModel.lineHeight)
+            self.lineView.backgroundColor = config.separatorConfig.color
+            self.lineView.frame = CGRect.init(x: 0, y: viewHeight-config.separatorConfig.height, width: self.frame.size.width, height:config.separatorConfig.height)
         }
 
+        
+    }
+    
+    private func getTitleWidth(cancelSize:CGSize,confirmSize:CGSize) -> CGFloat{
+        let titleWidth:CGFloat = self.frame.size.width - config.titleConfig.leftRightMargin*2 - config.cancelConfig.margin-config.confirmConfig.margin
+        if !config.isTitleAutomaticCenter {
+            
+            if config.cancelConfig.isHidden && !config.confirmConfig.isHidden {
+                //取消按钮是隐藏，但确定按钮不隐藏
+                return titleWidth - confirmSize.width
+            }
+            if config.confirmConfig.isHidden && !config.cancelConfig.isHidden {
+                //取消按钮显示，确定按钮隐藏
+                return titleWidth - cancelSize.width
+            }
+        }
+        
+        return titleWidth -  max(cancelSize.width, confirmSize.width)*2
+    }
+    
+    private func setupTitleFrame(width:CGFloat,height:CGFloat,viewHeight:CGFloat){
+        if !config.isTitleAutomaticCenter {
+            
+            if config.cancelConfig.isHidden && !config.confirmConfig.isHidden {
+                //取消按钮是隐藏，但确定按钮显示
+                self.titleLabel.frame = CGRect.init(x: config.cancelConfig.margin + config.titleConfig.leftRightMargin, y: 0, width: width, height: viewHeight)
+                self.titleLabel.center = CGPoint.init(x: self.titleLabel.center.x, y: viewHeight/2.0)
+                return
+            }
+            if config.confirmConfig.isHidden && !config.cancelConfig.isHidden {
+                //取消按钮显示，确定按钮隐藏
+                self.titleLabel.frame = CGRect.init(x: config.cancelConfig.margin + config.titleConfig.leftRightMargin + self.cancelButton.frame.size.width, y: 0, width: width, height: height)
+                self.titleLabel.center = CGPoint.init(x: self.titleLabel.center.x, y: viewHeight/2.0)
+                return
+            }
+        }
+        self.titleLabel.frame = CGRect.init(x: 0, y: 0, width: width, height: height)
+        self.titleLabel.center = CGPoint.init(x: self.frame.size.width/2.0, y: viewHeight/2.0)
         
     }
     
@@ -98,7 +139,7 @@ class ZJJPopupTopView: UIView {
             //文本内容距离按钮的左右边距
             let buttonEdgeInsetLeftRight = config.leftRightMargin
             let width = config.text.boundingRect(with: CGSize.init(width: CGFloat(MAXFLOAT), height: 25), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font:config.font], context: nil).size.width
-            let btnHeight = popupModel.topViewMinHeight - config.minTopBottom*2
+            let btnHeight = self.config.minHeight - config.minTopBottom*2
             
             if width > maxWidth {
                 //文本的宽度大于最大宽度

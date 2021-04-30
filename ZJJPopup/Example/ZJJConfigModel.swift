@@ -43,7 +43,11 @@ struct  ZJJConfigModel {
     
         var popupModel = ZJJPopupModel()
         //设置标题
-        popupModel.titleConfig.text = title
+        popupModel.topViewConfig.titleConfig.text = title
+        //隐藏取消按钮
+        popupModel.topViewConfig.cancelConfig.isHidden = true
+        //设置title的位置是否自动居中
+        popupModel.topViewConfig.isTitleAutomaticCenter = false
         //居中显示
         popupModel.popupViewStyle = .center
         return ZJJConfigModel.init(type: .customTableView, option: option,popupModel: popupModel)
@@ -77,24 +81,24 @@ extension ZJJPopupModel {
         popupModel.isTouchHidden = false //点击遮罩层，是否隐藏弹框视图
         popupModel.isConfirmHidden = false //点击确定按钮，是否隐藏弹框视图
         popupModel.contentViewMinHeight = 300 //contentView内容的最小高度
-        popupModel.topViewMinHeight = 50 //topView 内容的最小高度
+        popupModel.topViewConfig.minHeight = 50 //topView 内容的最小高度
         popupModel.popupViewRadius = 0 //popupView的圆角
-        popupModel.coverColor = UIColor.init(red:0, green: 0, blue:0, alpha: 0.8) //遮罩层的颜色
+        popupModel.maskLayerColor = UIColor.init(red:0, green: 0, blue:0, alpha: 0.8) //遮罩层的颜色
         
         //设置标题
-        popupModel.titleConfig.text = title
+        popupModel.topViewConfig.titleConfig.text = title
         //设置标题的字体大小
-        popupModel.titleConfig.font = UIFont.systemFont(ofSize: 20)
+        popupModel.topViewConfig.titleConfig.font = UIFont.systemFont(ofSize: 20)
         //隐藏取消按钮
-        popupModel.cancelConfig.isHidden = true
+        popupModel.topViewConfig.cancelConfig.isHidden = true
         //设置确定按钮的文本
-        popupModel.confirmConfig.text = "Confirm"
+        popupModel.topViewConfig.confirmConfig.text = "Confirm"
         //设置确定文本的颜色
-        popupModel.confirmConfig.color = .white
+        popupModel.topViewConfig.confirmConfig.color = .white
         //设置确定按钮的背景色
-        popupModel.confirmConfig.backgroundColor = .blue
+        popupModel.topViewConfig.confirmConfig.backgroundColor = .blue
         //设置确定按钮的圆角，边框大小和颜色
-        popupModel.confirmConfig.set(cornerRadius: 5,borderWidth: 1,borderColor: .red)
+        popupModel.topViewConfig.confirmConfig.set(cornerRadius: 5,borderWidth: 1,borderColor: .red)
         return popupModel
     }
 }

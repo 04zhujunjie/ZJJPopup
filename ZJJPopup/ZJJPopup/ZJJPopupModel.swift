@@ -14,19 +14,13 @@ struct ZJJPopupModel {
     var isTouchHidden:Bool = true //点击遮罩层，是否隐藏弹框视图
     var isConfirmHidden:Bool = true //点击确定按钮，是否隐藏弹框视图
     var contentViewMinHeight:CGFloat = 220 //contentView内容的最小高度
-    var isHiddenTopView:Bool = false //是否隐藏 topView
-    var topViewMinHeight:CGFloat = 48 //topView 内容的最小高度
-    var coverColor:UIColor = UIColor.init(red:0, green: 0, blue:0, alpha: 0.5) //遮罩层的颜色
-    var lineColor:UIColor = UIColor(red: 0.42, green: 0.41, blue: 0.47,alpha:0.3) //分割线的颜色
-    var lineHeight:CGFloat = 0.6 //分割线的高度
-    var isHiddenLine:Bool = false //是否分割线
-    var titleConfig:ZJJPopupUIConfig = ZJJPopupUIConfig() //标题的设置
-    var cancelConfig:ZJJPopupButtonConfig = ZJJPopupButtonConfig.init(text: "取消") //取消按钮设置
-    var confirmConfig:ZJJPopupButtonConfig = ZJJPopupButtonConfig.init(text: "确定") //确定按钮设置
+    var maskLayerColor:UIColor = UIColor.init(red:0, green: 0, blue:0, alpha: 0.5) //遮罩层的颜色
+    
+    var topViewConfig:ZJJPopupTopViewConfig = ZJJPopupTopViewConfig()
     
     static func popup(title:String,style:ZJJPopupViewStyle = .bottom) -> ZJJPopupModel {
        var model = ZJJPopupModel()
-        model.titleConfig.text = title
+        model.topViewConfig.titleConfig.text = title
         model.popupViewStyle = style
         return model
     }
@@ -36,10 +30,27 @@ struct ZJJPopupModel {
         model.isTouchHidden = isTouchHidden
         model.popupViewStyle = .center
         model.contentViewMinHeight = contentViewMinHeight //设置最小高度
-        model.isHiddenTopView = true //隐藏topView
+        model.topViewConfig.isHidden = true //隐藏topView
         return model
     }
     
+}
+
+class ZJJPopupTopViewConfig{
+    var isHidden:Bool = false //是否隐藏
+    var minHeight:CGFloat = 48 //最小高度
+    var isTitleAutomaticCenter:Bool = true //标题是否自动居中，true表示title的宽度=supview.width - max(cancel.width ,confirm.width)*2,并且居中显示,fasle 表示 title的宽度=supview.width-(显示按钮的宽度)，不一定居中显示
+    //分割线设置
+    var  separatorConfig:ZJJPopupSeparatorConfig = ZJJPopupSeparatorConfig()
+    var titleConfig:ZJJPopupUIConfig = ZJJPopupUIConfig() //标题的设置
+    var cancelConfig:ZJJPopupButtonConfig = ZJJPopupButtonConfig.init(text: "取消") //取消按钮设置
+    var confirmConfig:ZJJPopupButtonConfig = ZJJPopupButtonConfig.init(text: "确定") //确定按钮设置
+}
+
+class ZJJPopupSeparatorConfig {
+    var color:UIColor = UIColor(red: 0.42, green: 0.41, blue: 0.47,alpha:0.3) //分割线的颜色
+    var height:CGFloat = 0.5 //分割线的高度
+    var isHidden:Bool = false //是否隐藏分割线
 }
 
 class ZJJPopupButtonConfig: ZJJPopupUIConfig {

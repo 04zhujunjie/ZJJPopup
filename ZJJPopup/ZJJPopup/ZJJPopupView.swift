@@ -42,7 +42,7 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
             tap.delegate = self
             self.addGestureRecognizer(tap)
         }
-        if !model.isHiddenTopView {
+        if !model.topViewConfig.isHidden {
             self.setupTopView()
             self.confirmBlock = confirmBlock
             self.cancelBlock = cancelBlock
@@ -62,7 +62,7 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
         if contentViewWidth < 1 {
             contentViewWidth = kZJJScreenWidth
         }
-        self.topView.setup(frame: CGRect.init(x: 0, y: 0, width:contentViewWidth, height:model.topViewMinHeight), popupModel: model)
+        self.topView.setup(frame: CGRect.init(x: 0, y: 0, width:contentViewWidth, height:0), config: model.topViewConfig)
         self.topView.cancelButton.addTarget(self, action: #selector(cancelButtonClick(btn:)), for: .touchUpInside)
         self.topView.confirmButton.addTarget(self, action: #selector(confirmButtonClick(btn:)), for: .touchUpInside)
     }
@@ -134,7 +134,7 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
     
     private func setupUI() {
         self.addSubview(self.popupView)
-        self.backgroundColor = model.coverColor
+        self.backgroundColor = model.maskLayerColor
         self.popupView.backgroundColor = .clear
         if self.contentView.backgroundColor == nil || self.contentView.backgroundColor == .clear  {
             self.contentView.backgroundColor = .white
@@ -144,8 +144,8 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
         let contentViewHeight = max(contentView.frame.size.height, model.contentViewMinHeight)
         var topViewViewHeight:CGFloat = 0
         var popuViewWidth:CGFloat = self.contentView.frame.size.width
-        if !model.isHiddenTopView {
-            topViewViewHeight = max(topView.frame.size.height, model.topViewMinHeight)
+        if !model.topViewConfig.isHidden {
+            topViewViewHeight = max(topView.frame.size.height, model.topViewConfig.minHeight)
             popuViewWidth = self.topView.frame.size.width
             self.popupView.addSubview(self.topView)
         }else{
@@ -187,13 +187,11 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
     
     private  func getWindow() -> UIWindow? {
         if #available(iOS 13, *) {
-            
             for scene in UIApplication.shared.connectedScenes {
                 if scene.activationState == .foregroundActive,let window = (scene as! UIWindowScene).windows.first {
                     return window
                 }
             }
-            
             if UIApplication.shared.windows.count > 0 {
                 for window in UIApplication.shared.windows {
                     if window.isMember(of: UIWindow.self) {
@@ -205,10 +203,8 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
             if let delegate = UIApplication.shared.delegate,let window = delegate.window,let w = window {
                 return w
             }
-            
         }
         return nil
-        
     }
     
     
