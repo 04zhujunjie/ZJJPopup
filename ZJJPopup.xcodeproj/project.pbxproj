@@ -25,7 +25,6 @@
 		FFB48241263A52B90062AB31 /* ZJJDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB48240263A52B90062AB31 /* ZJJDataModel.swift */; };
 		FFB48245263A7EF70062AB31 /* ZJJCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB48243263A7EF70062AB31 /* ZJJCustomCell.swift */; };
 		FFB48246263A7EF70062AB31 /* ZJJCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB48244263A7EF70062AB31 /* ZJJCustomCell.xib */; };
-		FFB48249263A85540062AB31 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB48248263A85540062AB31 /* UIViewExtension.swift */; };
 		FFB4824E263A9E9A0062AB31 /* ZJJCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4824D263A9E9A0062AB31 /* ZJJCustomView.swift */; };
 		FFB48251263A9EAC0062AB31 /* ZJJCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB48250263A9EAC0062AB31 /* ZJJCustomView.xib */; };
 /* End PBXBuildFile section */
@@ -51,7 +50,6 @@
 		FFB48240263A52B90062AB31 /* ZJJDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJDataModel.swift; sourceTree = "<group>"; };
 		FFB48243263A7EF70062AB31 /* ZJJCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJCustomCell.swift; sourceTree = "<group>"; };
 		FFB48244263A7EF70062AB31 /* ZJJCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZJJCustomCell.xib; sourceTree = "<group>"; };
-		FFB48248263A85540062AB31 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		FFB4824D263A9E9A0062AB31 /* ZJJCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJCustomView.swift; sourceTree = "<group>"; };
 		FFB48250263A9EAC0062AB31 /* ZJJCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZJJCustomView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,7 +107,6 @@
 				FFB4822F26396D520062AB31 /* ZJJPopupView.swift */,
 				FFB4823026396D520062AB31 /* ZJJPopup.swift */,
 				FFB4823126396D520062AB31 /* ZJJPopupModel.swift */,
-				FFB48248263A85540062AB31 /* UIViewExtension.swift */,
 			);
 			path = ZJJPopup;
 			sourceTree = "<group>";
@@ -200,7 +197,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB48249263A85540062AB31 /* UIViewExtension.swift in Sources */,
 				FFB4823626396D520062AB31 /* ZJJPopupTopView.swift in Sources */,
 				FFB4824E263A9E9A0062AB31 /* ZJJCustomView.swift in Sources */,
 				FFB4823826396D520062AB31 /* ZJJPopup.swift in Sources */,

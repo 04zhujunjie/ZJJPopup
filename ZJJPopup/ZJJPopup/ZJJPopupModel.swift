@@ -16,9 +16,13 @@ struct ZJJPopupModel {
     var isConfirmHidden:Bool = true //点击确定按钮，是否隐藏弹框视图
     var contentViewMinHeight:CGFloat = 220 //contentView内容的最小高度
     var maskLayerColor:UIColor = UIColor.init(red:0, green: 0, blue:0, alpha: 0.5) //遮罩层的颜色
-    
+    var blurEffectStyle:ZJJBlurEffectStyle = .none //设置毛玻璃效果,设置为none，显示遮罩层的颜色
+    var backgroundColor:UIColor = .white{
+        didSet{
+            self.topViewConfig.backgroundColor = backgroundColor
+        }
+    } //背景颜色
     var topViewConfig:ZJJPopupTopViewConfig = ZJJPopupTopViewConfig()
-    
     static func popup(title:String,animationType:ZJJPopupAnimationType = .move) -> ZJJPopupModel {
         var model = ZJJPopupModel()
         model.topViewConfig.titleConfig.text = title
@@ -39,6 +43,7 @@ struct ZJJPopupModel {
 
 class ZJJPopupTopViewConfig{
     var isHidden:Bool = false //是否隐藏
+    var backgroundColor:UIColor = .white
     var minHeight:CGFloat = 48 //最小高度
     var isTitleAutomaticCenter:Bool = true //标题是否自动居中，true表示title的宽度=supview.width - max(cancel.width ,confirm.width)*2,并且居中显示,fasle 表示 title的宽度=supview.width-(显示按钮的宽度)，不一定居中显示
     //分割线设置

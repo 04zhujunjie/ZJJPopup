@@ -42,6 +42,7 @@ struct  ZJJConfigModel {
         }
     
         var popupModel = ZJJPopupModel()
+//        popupModel.backgroundColor = .red
         popupModel.showInType = .vc //添加到UIViewController上
         //设置标题
         popupModel.topViewConfig.titleConfig.text = title
@@ -83,9 +84,10 @@ extension ZJJPopupModel {
         popupModel.isConfirmHidden = false //点击确定按钮，是否隐藏弹框视图
         popupModel.contentViewMinHeight = 300 //contentView内容的最小高度
         popupModel.topViewConfig.minHeight = 50 //topView 内容的最小高度
-        popupModel.popupViewRadius = 0 //popupView的圆角
+        popupModel.popupViewRadius = 0 //设置popupView的圆角
         popupModel.maskLayerColor = UIColor.init(red:0, green: 0, blue:0, alpha: 0.8) //遮罩层的颜色
-        
+        popupModel.topViewConfig.backgroundColor = .orange
+        popupModel.topViewConfig.titleConfig.color = .white
         //设置标题
         popupModel.topViewConfig.titleConfig.text = title
         //设置标题的字体大小

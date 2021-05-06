@@ -29,9 +29,7 @@ class ZJJPopupTopView: UIView {
         var confirmSize = CGSize.zero
         var titleWidth:CGFloat = 0
         var titleHeight:CGFloat = 0
-        if self.backgroundColor == nil {
-            self.backgroundColor = .white
-        }
+        self.backgroundColor = config.backgroundColor
         if !config.cancelConfig.isHidden {
             self.addSubview(self.cancelButton)
             cancelButton.contentEdgeInsets = .init(top: 0, left: config.cancelConfig.leftRightMargin, bottom: 0, right: config.cancelConfig.leftRightMargin)

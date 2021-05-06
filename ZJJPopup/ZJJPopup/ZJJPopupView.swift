@@ -16,6 +16,13 @@ public enum ZJJPopupViewShowInType{
     case nc //添加到UINavigationController上
 }
 
+public enum ZJJBlurEffectStyle:Int{
+    case none = -1
+    case extraLight = 0
+    case light = 1
+    case dark = 2
+}
+
 public enum ZJJPopupAnimationType {
     case move
     case scale
@@ -34,6 +41,7 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
     private var isAnimation:Bool = false //是否正在进行显示或消失的动画
     private var jj_window:UIWindow?
     private var jj_showInView:UIView?
+    private var effectView: UIVisualEffectView?
     convenience init(contentView:UIView,popupModel:ZJJPopupModel = ZJJPopupModel(),confirmBlock: ZJJPopupViewBlock? = nil){
         self.init(contentView:contentView,popupModel:popupModel,confirmBlock: confirmBlock,cancelBlock: nil)
     }
@@ -59,7 +67,6 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
         }
         
         self.setupUI()
-        
         
         
     }
@@ -117,6 +124,20 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
         if self.isAnimation {
             return
         }
+        self.effectView?.removeFromSuperview()
+        self.effectView = nil
+        if self.model.blurEffectStyle == .none {
+            self.backgroundColor = self.model.maskLayerColor
+        }else{
+            if let style = UIBlurEffect.Style.init(rawValue: self.model.blurEffectStyle.rawValue) {
+                self.effectView = UIVisualEffectView.init(effect: UIBlurEffect.init(style: style))
+                self.effectView?.alpha = 0.85
+                self.effectView?.frame = bounds
+                self.insertSubview(self.effectView!, at: 0)
+            }else{
+                self.backgroundColor = self.model.maskLayerColor
+            }
+        }
         self.alpha = 0
         if animationType == .scale {
             self.popupView.transform = CGAffineTransform.init(scaleX: 0, y: 0)
@@ -170,11 +191,12 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
     
     private func setupUI() {
         self.addSubview(self.popupView)
-        self.backgroundColor = model.maskLayerColor
+        self.backgroundColor = .clear
         self.popupView.backgroundColor = .clear
         if self.contentView.backgroundColor == nil || self.contentView.backgroundColor == .clear  {
-            self.contentView.backgroundColor = .white
+            self.contentView.backgroundColor = model.backgroundColor
         }
+        self.popupView.backgroundColor = model.backgroundColor
         self.popupView.addSubview(self.contentView)
         
         let contentViewHeight = max(contentView.frame.size.height, model.contentViewMinHeight)
@@ -253,3 +275,76 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
 }
 
 
+extension UIView {
+    //设置圆角
+    func jj_setCornersRadius(radius: CGFloat, roundingCorners: UIRectCorner) {
+        
+        let maskPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: roundingCorners, cornerRadii: CGSize(width: radius, height: radius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = maskPath.cgPath
+        maskLayer.shouldRasterize = true
+        maskLayer.rasterizationScale = UIScreen.main.scale
+        self.layer.mask = maskLayer
+    }
+    
+}
+
+extension UIWindow {
+    
+    static func current() -> UIWindow? {
+        if #available(iOS 13, *) {
+            for scene in UIApplication.shared.connectedScenes {
+                if scene.activationState == .foregroundActive,let window = (scene as! UIWindowScene).windows.first {
+                    return window
+                }
+            }
+            if UIApplication.shared.windows.count > 0 {
+                for window in UIApplication.shared.windows {
+                    if window.isMember(of: UIWindow.self) {
+                        return window
+                    }
+                }
+            }
+        }else{
+            if let delegate = UIApplication.shared.delegate,let window = delegate.window,let w = window {
+                return w
+            }
+        }
+        return nil
+    }
+    
+    func currentVC() -> UIViewController?{
+        if let rootVC = self.rootViewController{
+            return UIWindow.getCurrentVC(form: rootVC)
+        }
+        return nil
+    }
+    
+    static func currentVC() -> UIViewController?{
+        if let rootVC = self.current()?.rootViewController{
+            return self.getCurrentVC(form: rootVC)
+        }
+        return nil
+    }
+    
+    static private func getCurrentVC(form rootVC:UIViewController) -> UIViewController?{
+        var currentVC:UIViewController? = nil
+        var rootPre = rootVC
+        if rootPre.presentedViewController != nil {
+            rootPre = rootVC.presentedViewController!
+        }
+        if rootVC.isKind(of: UITabBarController.self) {
+            if let selectedViewController = (rootVC as! UITabBarController).selectedViewController {
+                currentVC = self.getCurrentVC(form: selectedViewController)
+            }
+        }else if rootVC.isKind(of: UINavigationController.self){
+            if let visibleViewController = (rootVC as! UINavigationController).visibleViewController {
+                currentVC = self.getCurrentVC(form: visibleViewController)
+            }
+        }else{
+            currentVC = rootPre
+        }
+        return currentVC
+    }
+}

@@ -92,8 +92,9 @@ class ViewController: UIViewController {
         
         let customView = Bundle.main.loadNibNamed("ZJJCustomView", owner: nil, options: nil)?.first as! ZJJCustomView
         customView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width-80, height: 200)
-        let popupView = ZJJPopup.customView(contentView: customView)
+        customView.backgroundColor = .orange
         
+        let popupView = ZJJPopup.customView(contentView: customView,blurEffectStyle: .light)
         customView.close { [weak popupView] in
             popupView?.hidden()
         }
@@ -120,6 +121,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         }
         let model = self.dataArray[indexPath.row]
         cell?.textLabel?.text = model.type.rawValue
+        cell?.textLabel?.textColor = .red
         cell?.selectionStyle = .none
         return cell!
     }

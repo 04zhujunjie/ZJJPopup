@@ -50,10 +50,11 @@ class ZJJPopup {
         return (pickerView,popupView)
     }
     
-    static func customView(contentView:UIView,isTouchHidden:Bool = false,animationType:ZJJPopupAnimationType = .scale) -> ZJJPopupView{
+    static func customView(contentView:UIView,isTouchHidden:Bool = false,animationType:ZJJPopupAnimationType = .scale,blurEffectStyle:ZJJBlurEffectStyle = .none) -> ZJJPopupView{
         var popupModel = ZJJPopupModel()
         popupModel.isTouchHidden = isTouchHidden
         popupModel.animationType = animationType
+        popupModel.blurEffectStyle = blurEffectStyle
         popupModel.topViewConfig.isHidden = true
         let popupView = ZJJPopupView.init(contentView: contentView, popupModel: popupModel)
         popupView.show()
