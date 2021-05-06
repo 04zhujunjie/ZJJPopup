@@ -17,7 +17,7 @@ struct ZJJPickerUI {
 }
 
 class ZJJDefaultPickerView: UIPickerView {
-
+    
     private var selectIndex:Int = 0
     open var selectModel:ZJJOptionProtocol?
     var pickerUI:ZJJPickerUI = ZJJPickerUI(){
@@ -34,7 +34,7 @@ class ZJJDefaultPickerView: UIPickerView {
         self.model = model
         self.reloadPicker(model)
     }
-
+    
     func reloadPicker( _ optionModel:ZJJOption? = nil) {
         var model = self.model
         if let md = optionModel {
@@ -64,12 +64,12 @@ class ZJJDefaultPickerView: UIPickerView {
         self.initData()
     }
     
-   private func initData() {
+    private func initData() {
         self.delegate = self
         self.dataSource = self
         self.showsSelectionIndicator = true
     }
-
+    
 }
 
 extension ZJJDefaultPickerView:UIPickerViewDataSource,UIPickerViewDelegate{
@@ -111,7 +111,7 @@ extension ZJJDefaultPickerView:UIPickerViewDataSource,UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-
+        
         for view in pickerView.subviews {
             if view.frame.size.height < 1 {
                 //设置分割线颜色
@@ -120,7 +120,7 @@ extension ZJJDefaultPickerView:UIPickerViewDataSource,UIPickerViewDelegate{
         }
         
         var pickerLabel:UILabel? = nil
-
+        
         if let label = view as? UILabel {
             pickerLabel = label
         }
@@ -141,5 +141,5 @@ extension ZJJDefaultPickerView:UIPickerViewDataSource,UIPickerViewDelegate{
         return pickerLabel!
     }
     
-
+    
 }

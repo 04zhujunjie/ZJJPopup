@@ -42,6 +42,7 @@ struct  ZJJConfigModel {
         }
     
         var popupModel = ZJJPopupModel()
+        popupModel.showInType = .vc //添加到UIViewController上
         //设置标题
         popupModel.topViewConfig.titleConfig.text = title
         //隐藏取消按钮
@@ -49,7 +50,7 @@ struct  ZJJConfigModel {
         //设置title的位置是否自动居中
         popupModel.topViewConfig.isTitleAutomaticCenter = false
         //居中显示
-        popupModel.popupViewStyle = .center
+        popupModel.animationType = .scale
         return ZJJConfigModel.init(type: .customTableView, option: option,popupModel: popupModel)
     }
 

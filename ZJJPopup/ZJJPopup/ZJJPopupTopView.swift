@@ -47,7 +47,7 @@ class ZJJPopupTopView: UIView {
         }
         
         if !config.titleConfig.isHidden {
-           
+            
             self.addSubview(self.titleLabel)
             self.setup(view: titleLabel, config: config.titleConfig)
             titleWidth = self.getTitleWidth(cancelSize: cancelSize, confirmSize: confirmSize)
@@ -91,7 +91,7 @@ class ZJJPopupTopView: UIView {
             self.lineView.backgroundColor = config.separatorConfig.color
             self.lineView.frame = CGRect.init(x: 0, y: viewHeight-config.separatorConfig.height, width: self.frame.size.width, height:config.separatorConfig.height)
         }
-
+        
         
     }
     

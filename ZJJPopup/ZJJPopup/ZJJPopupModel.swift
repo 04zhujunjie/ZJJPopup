@@ -9,7 +9,8 @@ import UIKit
 
 struct ZJJPopupModel {
     
-    var popupViewStyle:ZJJPopupViewStyle = .bottom //设置popupView的位置
+    var animationType:ZJJPopupAnimationType = .move //弹框出现样式
+    var showInType:ZJJPopupViewShowInType = .window //弹框添加到哪里，默认是在window上
     var popupViewRadius:CGFloat = 10 //设置popupView的圆角
     var isTouchHidden:Bool = true //点击遮罩层，是否隐藏弹框视图
     var isConfirmHidden:Bool = true //点击确定按钮，是否隐藏弹框视图
@@ -18,17 +19,17 @@ struct ZJJPopupModel {
     
     var topViewConfig:ZJJPopupTopViewConfig = ZJJPopupTopViewConfig()
     
-    static func popup(title:String,style:ZJJPopupViewStyle = .bottom) -> ZJJPopupModel {
-       var model = ZJJPopupModel()
+    static func popup(title:String,animationType:ZJJPopupAnimationType = .move) -> ZJJPopupModel {
+        var model = ZJJPopupModel()
         model.topViewConfig.titleConfig.text = title
-        model.popupViewStyle = style
+        model.animationType = animationType
         return model
     }
     
     static func popupCenter(isTouch isTouchHidden:Bool = false,minHeight contentViewMinHeight:CGFloat = 220) -> ZJJPopupModel {
-       var model = ZJJPopupModel()
+        var model = ZJJPopupModel()
         model.isTouchHidden = isTouchHidden
-        model.popupViewStyle = .center
+        model.animationType = .scale
         model.contentViewMinHeight = contentViewMinHeight //设置最小高度
         model.topViewConfig.isHidden = true //隐藏topView
         return model

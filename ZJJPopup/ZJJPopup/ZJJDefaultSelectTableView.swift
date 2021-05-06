@@ -15,7 +15,7 @@ typealias ZJJDefaultSelectTableViewDidSelectRowAtBlock = (ZJJDefaultSelectTableV
 
 
 class ZJJDefaultSelectTableView: UITableView {
-
+    
     private var selectIndex:Int = -1
     open var selectModel:ZJJOptionProtocol?
     var separatorLeftRightMargin:CGFloat = 15{
@@ -31,7 +31,7 @@ class ZJJDefaultSelectTableView: UITableView {
             self.reloadData()
         }
     }
-
+    
     convenience init(frame: CGRect, model:ZJJOption) {
         self.init(frame: frame, style: .plain)
         self.model = model
@@ -86,7 +86,7 @@ class ZJJDefaultSelectTableView: UITableView {
         self.separatorLeftRightMargin = 15
     }
     
-
+    
     func setupBlock(heightForRowBlock:ZJJDefaultSelectTableViewHeightForRowBlock?,cellForRowBlock:ZJJDefaultSelectTableViewCellForRowBlock?) {
         self.heightForRowBlock = heightForRowBlock
         self.cellForRowBlock = cellForRowBlock

@@ -94,8 +94,8 @@ class ViewController: UIViewController {
         customView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width-80, height: 200)
         let popupView = ZJJPopup.customView(contentView: customView)
         
-        customView.close {
-            popupView.hidden()
+        customView.close { [weak popupView] in
+            popupView?.hidden()
         }
     }
     
