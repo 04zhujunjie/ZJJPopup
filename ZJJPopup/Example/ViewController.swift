@@ -23,13 +23,18 @@ class ViewController: UIViewController {
         self.view.addSubview(self.tableView)
         self.dataArray = [ZJJConfigModel.picker(),ZJJConfigModel.tableView(title: "请选择tableView列表中的数据"),ZJJConfigModel.customTableView(title:"请选择customTableView列表中的数据"),ZJJConfigModel.init(type: .customView)]
         self.tableView.reloadData()
+        
         // Do any additional setup after loading the view.
     }
     
     func showPicker(model:ZJJConfigModel) {
-        let (pickerView,_) =  ZJJPopup.pickerView(optionModel: model.option, title: "请选择") { (pickerView, popupView, model, btn) in
-            let dataModel = model as? ZJJDataModel
-            print("==\(dataModel?.title ?? "")==row:\(dataModel?.row ?? 0)==")
+        let (pickerView,_) =  ZJJPopup.pickerView(optionModel: model.option, title: "请选择") { (pickerView, popupView, dataModel, btn) in
+            if let md = dataModel as? ZJJDataModel {
+                model.option.selectModel = md
+                self.title = md.jj_optionValue
+                print("==\(md.title ?? "")==row:\(md.row ?? 0)==")
+            }
+            
         }
         
         var pickerUI = ZJJPickerUI()
@@ -46,20 +51,27 @@ class ViewController: UIViewController {
     
     func showTableView(model:ZJJConfigModel) {
         
-        ZJJPopup.tableView(optionModel: model.option, popupModel: model.popupModel) { (tableView, popupView, model, btn) in
+        ZJJPopup.tableView(optionModel: model.option, popupModel: model.popupModel) { (tableView, popupView, dataModel, btn) in
             btn.isEnabled = false
             DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
                 //延时，模拟网络请求，等数据成功后在进行隐藏
                 btn.isEnabled = true
                 popupView.hidden()
+                if let md = dataModel as? ZJJDataModel {
+                    model.option.selectModel = md
+                    self.title = md.jj_optionValue
+                }
             }
         }
     }
     
     func showCustomTableView(model:ZJJConfigModel) {
         
-        let (tableView,_) =  ZJJPopup.tableView(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width-60, height:250), optionModel:model.option, popupModel: model.popupModel) { (tableView, popupView, model, btn) in
-            if let md = model {
+        let (tableView,_) =  ZJJPopup.tableView(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width-60, height:250), optionModel:model.option, popupModel: model.popupModel) { (tableView, popupView, customModel, btn) in
+            if let md = customModel as? ZJJCustomModel {
+
+                model.option.selectModel = md
+                self.title = md.jj_optionValue
                 print("选中：\(md.jj_optionValue ?? "")")
             }else{
                 print("未选择")
@@ -121,7 +133,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         }
         let model = self.dataArray[indexPath.row]
         cell?.textLabel?.text = model.type.rawValue
-        cell?.textLabel?.textColor = .red
+//        cell?.textLabel?.textColor = .red
         cell?.selectionStyle = .none
         return cell!
     }

@@ -104,14 +104,14 @@ class ZJJPopupView: UIView,UIGestureRecognizerDelegate {
         self.topView.confirmButton.addTarget(self, action: #selector(confirmButtonClick(btn:)), for: .touchUpInside)
     }
     
-    @objc open func cancelButtonClick(btn:UIButton){
+    @objc func cancelButtonClick(btn:UIButton){
         self.hidden()
         if let cancelBlock = self.cancelBlock{
             cancelBlock(self,btn)
         }
     }
     
-    @objc open func confirmButtonClick(btn:UIButton){
+    @objc func confirmButtonClick(btn:UIButton){
         if model.isConfirmHidden {
             self.hidden()
         }

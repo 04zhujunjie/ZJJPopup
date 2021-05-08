@@ -11,12 +11,16 @@ enum ZJJPopupType:String {
     case picker,tableView,customTableView,customView
 }
 
-struct  ZJJConfigModel {
+class ZJJConfigModel {
 
     var type:ZJJPopupType = .picker
     var option:ZJJOption = ZJJOption()
     var popupModel:ZJJPopupModel = ZJJPopupModel()
-    
+    init(type:ZJJPopupType = .picker,option:ZJJOption = ZJJOption(),popupModel:ZJJPopupModel = ZJJPopupModel()) {
+        self.type = type
+        self.option = option
+        self.popupModel = popupModel
+    }
     static func picker() -> ZJJConfigModel {
         let option = self.getOption(type: .picker)
         return ZJJConfigModel.init(type: .picker, option: option)
@@ -86,6 +90,7 @@ extension ZJJPopupModel {
         popupModel.topViewConfig.minHeight = 50 //topView 内容的最小高度
         popupModel.popupViewRadius = 0 //设置popupView的圆角
         popupModel.maskLayerColor = UIColor.init(red:0, green: 0, blue:0, alpha: 0.8) //遮罩层的颜色
+        popupModel.showInType = .nc //弹窗添加到navigationController上
         popupModel.topViewConfig.backgroundColor = .orange
         popupModel.topViewConfig.titleConfig.color = .white
         //设置标题

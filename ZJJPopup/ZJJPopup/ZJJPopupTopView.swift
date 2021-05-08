@@ -11,11 +11,11 @@ class ZJJPopupTopView: UIView {
     
     private let titleLabel = UILabel()
     private let lineView:UIView = UIView()
-    let cancelButton = UIButton()
-    let confirmButton = UIButton()
+   public let cancelButton = UIButton()
+   public let confirmButton = UIButton()
     private var config:ZJJPopupTopViewConfig =  ZJJPopupTopViewConfig()
     
-    func setup(frame:CGRect,config:ZJJPopupTopViewConfig) {
+    public func setup(frame:CGRect,config:ZJJPopupTopViewConfig) {
         self.frame = frame
         
         confirmButton.contentEdgeInsets = .init(top: 0, left: 15, bottom: 0, right: 15)

@@ -27,6 +27,7 @@
 		FFB48246263A7EF70062AB31 /* ZJJCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB48244263A7EF70062AB31 /* ZJJCustomCell.xib */; };
 		FFB4824E263A9E9A0062AB31 /* ZJJCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4824D263A9E9A0062AB31 /* ZJJCustomView.swift */; };
 		FFB48251263A9EAC0062AB31 /* ZJJCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB48250263A9EAC0062AB31 /* ZJJCustomView.xib */; };
+		FFB4826C2646732A0062AB31 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FFB4826B2646732A0062AB31 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FFB48244263A7EF70062AB31 /* ZJJCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZJJCustomCell.xib; sourceTree = "<group>"; };
 		FFB4824D263A9E9A0062AB31 /* ZJJCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJCustomView.swift; sourceTree = "<group>"; };
 		FFB48250263A9EAC0062AB31 /* ZJJCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZJJCustomView.xib; sourceTree = "<group>"; };
+		FFB4826B2646732A0062AB31 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				FFB4821D26396D390062AB31 /* Assets.xcassets */,
 				FFB4821F26396D390062AB31 /* LaunchScreen.storyboard */,
 				FFB4822226396D390062AB31 /* Info.plist */,
+				FFB4826B2646732A0062AB31 /* README.md */,
 			);
 			path = ZJJPopup;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB4826C2646732A0062AB31 /* README.md in Resources */,
 				FFB48251263A9EAC0062AB31 /* ZJJCustomView.xib in Resources */,
 				FFB4822126396D390062AB31 /* LaunchScreen.storyboard in Resources */,
 				FFB4821E26396D390062AB31 /* Assets.xcassets in Resources */,

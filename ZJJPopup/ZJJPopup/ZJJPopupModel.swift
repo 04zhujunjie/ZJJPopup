@@ -22,7 +22,8 @@ struct ZJJPopupModel {
             self.topViewConfig.backgroundColor = backgroundColor
         }
     } //背景颜色
-    var topViewConfig:ZJJPopupTopViewConfig = ZJJPopupTopViewConfig()
+    
+    var topViewConfig:ZJJPopupTopViewConfig = ZJJPopupTopViewConfig() //topVie配置
     static func popup(title:String,animationType:ZJJPopupAnimationType = .move) -> ZJJPopupModel {
         var model = ZJJPopupModel()
         model.topViewConfig.titleConfig.text = title
