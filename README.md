@@ -1,17 +1,17 @@
 
 # ZJJPopup   
 
-## 效果图
+### 效果图
 ![image](https://github.com/04zhujunjie/ZJJTimeCountDown/blob/master/ZJJPopup.gif)
 
-## 特点：
+### 特点：
 1、弹窗可以选择显示在window，viewController, navigationController上
 2、弹窗的样式可以通过 ZJJPopupModel对象来设置
 3、可以自定义弹窗 ,支持毛玻璃效果     
 4、提供默认的选择器（UIPickerView和UITableView）的弹框      
 5、弹窗的头部视图，可以根据文本标题和按钮文本来动态调节头部视图的高度
 
-## 弹窗的样式设置：      
+### 弹窗的样式设置：      
 可以通过ZJJPopupModel对象来进行设置
    
 ```
@@ -36,15 +36,15 @@ struct ZJJPopupModel {
 
 ```
 
-## 如何使用默认的弹窗选择器（UIPickerView和UITableView）
+### 如何使用默认的弹窗选择器（UIPickerView和UITableView）
 
-### 一、创建的数据结构体或者模型对象遵循 ZJJOptionProtocol协议，jj_optionValue值是作为选择器列表中显示的值
+#### 一、创建的数据结构体或者模型对象遵循 ZJJOptionProtocol协议，jj_optionValue值是作为选择器列表中显示的值
 ```
 protocol ZJJOptionProtocol {
     var jj_optionValue:String?{set get} //必须
 }
 ```
 
-### 二、可以使用ZJJPopup提供的便捷的方法，如果需要自定义选择器或者自定义弹窗，可以参照ZJJPopup内部的实现
+#### 二、可以使用ZJJPopup提供的便捷的方法，如果需要自定义选择器或者自定义弹窗，可以参照ZJJPopup内部的实现
 
    
