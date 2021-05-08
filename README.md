@@ -45,6 +45,13 @@ protocol ZJJOptionProtocol {
 }
 ```
 
-#### 二、可以使用ZJJPopup提供的便捷的方法，如果需要自定义选择器或者自定义弹窗，可以参照ZJJPopup内部的实现
+#### 二、创建ZJJPopupModel对象来设置弹窗的样式，创建ZJJOption对象来存储要显示的选择列表数据和列表中选中的数据
+```
+struct  ZJJOption {
+    var optionArray:[ZJJOptionProtocol] = [] //选择的列表
+    var selectModel:ZJJOptionProtocol? //选择的对象
+}
+```
 
+#### 三、可以使用ZJJPopup提供的便捷的方法，如果需要自定义选择器或者自定义弹窗，可以参照ZJJPopup内部的实现
    
