@@ -2,7 +2,7 @@
 # ZJJPopup   
 
 ### 效果图
-![image](https://github.com/04zhujunjie/ZJJTimeCountDown/blob/master/ZJJPopup.gif)
+![image](https://github.com/04zhujunjie/ZJJPopup/blob/main/ZJJPopup.gif)
 
 ### 特点：
 1、弹窗可以选择显示在window，viewController, navigationController上
@@ -31,7 +31,7 @@ struct ZJJPopupModel {
         }
     } //背景颜色
     
-    var topViewConfig:ZJJPopupTopViewConfig = ZJJPopupTopViewConfig() //topVie配置
+    var topViewConfig:ZJJPopupTopViewConfig = ZJJPopupTopViewConfig() //topView配置
     }
 
 ```
@@ -41,7 +41,7 @@ struct ZJJPopupModel {
 #### 一、创建的数据结构体或者模型对象遵循 ZJJOptionProtocol协议，jj_optionValue值是作为选择器列表中显示的值
 ```
 protocol ZJJOptionProtocol {
-    var jj_optionValue:String?{set get} //必须
+    var jj_optionValue:String?{set get} 
 }
 ```
 
