@@ -5,11 +5,11 @@
 ![image](https://github.com/04zhujunjie/ZJJPopup/blob/main/ZJJPopup.gif)
 
 ### 特点：
-1、弹窗可以选择显示在window，viewController, navigationController上
-2、弹窗的样式可以通过 ZJJPopupModel对象来设置
+1、弹窗可以选择显示在window，viewController, navigationController上  
+2、弹窗的样式可以通过 ZJJPopupModel对象来设置   
 3、可以自定义弹窗 ,支持毛玻璃效果     
-4、提供默认的选择器（UIPickerView和UITableView）的弹框      
-5、弹窗的头部视图，可以根据文本标题和按钮文本来动态调节头部视图的高度
+4、提供默认的选择器（UIPickerView和UITableView）的弹框        
+5、弹窗的头部视图，可以根据文本标题和按钮文本来动态调节头部视图的高度  
 
 ### 弹窗的样式设置：      
 可以通过ZJJPopupModel对象来进行设置
