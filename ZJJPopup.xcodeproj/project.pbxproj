@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF5791AC264CFC7900A9CD2A /* ZJJPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5791AA264CFC7900A9CD2A /* ZJJPopupView.swift */; };
+		FF5791AD264CFC7900A9CD2A /* ZJJPopupTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5791AB264CFC7900A9CD2A /* ZJJPopupTopView.swift */; };
 		FFB4821526396D380062AB31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4821426396D380062AB31 /* AppDelegate.swift */; };
 		FFB4821726396D380062AB31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4821626396D380062AB31 /* SceneDelegate.swift */; };
 		FFB4821926396D380062AB31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4821826396D380062AB31 /* ViewController.swift */; };
@@ -17,8 +19,6 @@
 		FFB4823326396D520062AB31 /* ZJJOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4822B26396D520062AB31 /* ZJJOption.swift */; };
 		FFB4823426396D520062AB31 /* ZJJDefaultPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4822C26396D520062AB31 /* ZJJDefaultPickerView.swift */; };
 		FFB4823526396D520062AB31 /* ZJJOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4822D26396D520062AB31 /* ZJJOptionProtocol.swift */; };
-		FFB4823626396D520062AB31 /* ZJJPopupTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4822E26396D520062AB31 /* ZJJPopupTopView.swift */; };
-		FFB4823726396D520062AB31 /* ZJJPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4822F26396D520062AB31 /* ZJJPopupView.swift */; };
 		FFB4823826396D520062AB31 /* ZJJPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4823026396D520062AB31 /* ZJJPopup.swift */; };
 		FFB4823926396D520062AB31 /* ZJJPopupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4823126396D520062AB31 /* ZJJPopupModel.swift */; };
 		FFB4823D263970630062AB31 /* ZJJConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4823C263970630062AB31 /* ZJJConfigModel.swift */; };
@@ -27,10 +27,11 @@
 		FFB48246263A7EF70062AB31 /* ZJJCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB48244263A7EF70062AB31 /* ZJJCustomCell.xib */; };
 		FFB4824E263A9E9A0062AB31 /* ZJJCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB4824D263A9E9A0062AB31 /* ZJJCustomView.swift */; };
 		FFB48251263A9EAC0062AB31 /* ZJJCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB48250263A9EAC0062AB31 /* ZJJCustomView.xib */; };
-		FFB4826C2646732A0062AB31 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FFB4826B2646732A0062AB31 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF5791AA264CFC7900A9CD2A /* ZJJPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJPopupView.swift; sourceTree = "<group>"; };
+		FF5791AB264CFC7900A9CD2A /* ZJJPopupTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJPopupTopView.swift; sourceTree = "<group>"; };
 		FFB4821126396D380062AB31 /* ZJJPopup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZJJPopup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB4821426396D380062AB31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB4821626396D380062AB31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,8 +44,6 @@
 		FFB4822B26396D520062AB31 /* ZJJOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJOption.swift; sourceTree = "<group>"; };
 		FFB4822C26396D520062AB31 /* ZJJDefaultPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJDefaultPickerView.swift; sourceTree = "<group>"; };
 		FFB4822D26396D520062AB31 /* ZJJOptionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJOptionProtocol.swift; sourceTree = "<group>"; };
-		FFB4822E26396D520062AB31 /* ZJJPopupTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJPopupTopView.swift; sourceTree = "<group>"; };
-		FFB4822F26396D520062AB31 /* ZJJPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJPopupView.swift; sourceTree = "<group>"; };
 		FFB4823026396D520062AB31 /* ZJJPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJPopup.swift; sourceTree = "<group>"; };
 		FFB4823126396D520062AB31 /* ZJJPopupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJJPopupModel.swift; sourceTree = "<group>"; };
 		FFB4823C263970630062AB31 /* ZJJConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJConfigModel.swift; sourceTree = "<group>"; };
@@ -53,7 +52,6 @@
 		FFB48244263A7EF70062AB31 /* ZJJCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZJJCustomCell.xib; sourceTree = "<group>"; };
 		FFB4824D263A9E9A0062AB31 /* ZJJCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJJCustomView.swift; sourceTree = "<group>"; };
 		FFB48250263A9EAC0062AB31 /* ZJJCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZJJCustomView.xib; sourceTree = "<group>"; };
-		FFB4826B2646732A0062AB31 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +92,6 @@
 				FFB4821D26396D390062AB31 /* Assets.xcassets */,
 				FFB4821F26396D390062AB31 /* LaunchScreen.storyboard */,
 				FFB4822226396D390062AB31 /* Info.plist */,
-				FFB4826B2646732A0062AB31 /* README.md */,
 			);
 			path = ZJJPopup;
 			sourceTree = "<group>";
@@ -106,8 +103,8 @@
 				FFB4822B26396D520062AB31 /* ZJJOption.swift */,
 				FFB4822C26396D520062AB31 /* ZJJDefaultPickerView.swift */,
 				FFB4822D26396D520062AB31 /* ZJJOptionProtocol.swift */,
-				FFB4822E26396D520062AB31 /* ZJJPopupTopView.swift */,
-				FFB4822F26396D520062AB31 /* ZJJPopupView.swift */,
+				FF5791AB264CFC7900A9CD2A /* ZJJPopupTopView.swift */,
+				FF5791AA264CFC7900A9CD2A /* ZJJPopupView.swift */,
 				FFB4823026396D520062AB31 /* ZJJPopup.swift */,
 				FFB4823126396D520062AB31 /* ZJJPopupModel.swift */,
 			);
@@ -185,7 +182,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB4826C2646732A0062AB31 /* README.md in Resources */,
 				FFB48251263A9EAC0062AB31 /* ZJJCustomView.xib in Resources */,
 				FFB4822126396D390062AB31 /* LaunchScreen.storyboard in Resources */,
 				FFB4821E26396D390062AB31 /* Assets.xcassets in Resources */,
@@ -201,19 +197,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB4823626396D520062AB31 /* ZJJPopupTopView.swift in Sources */,
 				FFB4824E263A9E9A0062AB31 /* ZJJCustomView.swift in Sources */,
 				FFB4823826396D520062AB31 /* ZJJPopup.swift in Sources */,
 				FFB4823926396D520062AB31 /* ZJJPopupModel.swift in Sources */,
 				FFB48241263A52B90062AB31 /* ZJJDataModel.swift in Sources */,
-				FFB4823726396D520062AB31 /* ZJJPopupView.swift in Sources */,
 				FFB4823D263970630062AB31 /* ZJJConfigModel.swift in Sources */,
 				FFB4823226396D520062AB31 /* ZJJDefaultSelectTableView.swift in Sources */,
+				FF5791AC264CFC7900A9CD2A /* ZJJPopupView.swift in Sources */,
 				FFB4823426396D520062AB31 /* ZJJDefaultPickerView.swift in Sources */,
 				FFB4821926396D380062AB31 /* ViewController.swift in Sources */,
 				FFB4823526396D520062AB31 /* ZJJOptionProtocol.swift in Sources */,
 				FFB4823326396D520062AB31 /* ZJJOption.swift in Sources */,
 				FFB4821526396D380062AB31 /* AppDelegate.swift in Sources */,
+				FF5791AD264CFC7900A9CD2A /* ZJJPopupTopView.swift in Sources */,
 				FFB4821726396D380062AB31 /* SceneDelegate.swift in Sources */,
 				FFB48245263A7EF70062AB31 /* ZJJCustomCell.swift in Sources */,
 			);

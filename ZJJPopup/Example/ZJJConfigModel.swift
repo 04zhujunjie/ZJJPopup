@@ -101,12 +101,14 @@ extension ZJJPopupModel {
         popupModel.topViewConfig.cancelConfig.isHidden = true
         //设置确定按钮的文本
         popupModel.topViewConfig.confirmConfig.text = "Confirm"
+        //按钮的内文本距离按钮的左右边距
+        popupModel.topViewConfig.confirmConfig.leftRightMargin = 15
         //设置确定文本的颜色
         popupModel.topViewConfig.confirmConfig.color = .white
         //设置确定按钮的背景色
         popupModel.topViewConfig.confirmConfig.backgroundColor = .blue
         //设置确定按钮的圆角，边框大小和颜色
-        popupModel.topViewConfig.confirmConfig.set(cornerRadius: 5,borderWidth: 1,borderColor: .red)
+        popupModel.topViewConfig.confirmConfig.set(cornerRadius: ZJJPopupButtonConfig.halfRadius,borderWidth: 1,borderColor: .red)
         return popupModel
     }
 }
